@@ -1,0 +1,14 @@
+<h1> Song show page </h1>
+Song title: <%= @song.title %><br/><br/>
+Artist Name: <%= @song.artist_name %><br/><br/>
+<% if @song.released %>
+Release year: <%= @song.release_year %><br/><br/>
+<% else %>
+Song is unreleased
+<% end %>
+<br/>
+Genre: <%= @song.genre %><br/><br/>
+
+<%= link_to "Edit Song", edit_song_path(@song) %>
+<br />
+<%= link_to 'Delete', @song, method: :delete, data: { confirm: 'For real?' } %>
